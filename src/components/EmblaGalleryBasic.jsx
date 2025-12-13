@@ -2,91 +2,9 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { portfolioImages } from '../constants';
 
 function EmblaGalleryBasic() {
-	// Моковые данные прямо в компоненте
-	const portfolioImages = [
-		{
-			id: 1,
-			src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop&crop=face",
-			alt: "Каре с челкой",
-			title: "Классическое каре",
-			category: "Стрижки",
-			featured: true
-		},
-		{
-			id: 2,
-			src: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800&h=600&fit=crop",
-			alt: "Балаяж",
-			title: "Окрашивание балаяж",
-			category: "Окрашивание",
-			featured: true
-		},
-		{
-			id: 3,
-			src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=600&fit=crop&crop=face",
-			alt: "Боб каре",
-			title: "Градуированный боб",
-			category: "Стрижки",
-			featured: false
-		},
-		{
-			id: 4,
-			src: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=600&fit=crop&crop=face",
-			alt: "Асимметрия",
-			title: "Асимметричная стрижка",
-			category: "Стрижки",
-			featured: true
-		},
-		{
-			id: 5,
-			src: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=600&fit=crop&crop=face",
-			alt: "Пикси",
-			title: "Стрижка пикси",
-			category: "Стрижки",
-			featured: false
-		},
-		{
-			id: 6,
-			src: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=800&h=600&fit=crop&crop=face",
-			alt: "Омбре",
-			title: "Омбре на темных волосах",
-			category: "Окрашивание",
-			featured: true
-		},
-		{
-			id: 7,
-			src: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&h=600&fit=crop&crop=face",
-			alt: "Укладка",
-			title: "Вечерняя укладка",
-			category: "Укладки",
-			featured: true
-		},
-		{
-			id: 8,
-			src: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=800&h=600&fit=crop&crop=face",
-			alt: "Свадебная",
-			title: "Свадебная прическа",
-			category: "Укладки",
-			featured: false
-		},
-		{
-			id: 9,
-			src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=600&fit=crop&crop=face",
-			alt: "Мужская стрижка",
-			title: "Мужская стрижка андеркат",
-			category: "Мужские стрижки",
-			featured: true
-		},
-		{
-			id: 10,
-			src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=face",
-			alt: "Мужская стрижка 2",
-			title: "Мужская стрижка фейд",
-			category: "Мужские стрижки",
-			featured: false
-		}
-	];
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
 		loop: true,

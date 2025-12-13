@@ -1,70 +1,72 @@
 // eslint-disable react-hooks/exhaustive-deps
 import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { serviceCategories } from '../constants';
 
 function EmblaGalleryCategories() {
-	const serviceCategories = [
-		{
-			id: 1,
-			title: "Стрижки",
-			count: 24,
-			description: "Классические и современные техники",
-			color: "from-blue-500/20 to-indigo-500/20",
-			borderColor: "border-blue-200",
-			textColor: "text-blue-700",
-			image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"
-		},
-		{
-			id: 2,
-			title: "Окрашивание",
-			count: 18,
-			description: "Сложное окрашивание любой сложности",
-			color: "from-purple-500/20 to-pink-500/20",
-			borderColor: "border-purple-200",
-			textColor: "text-purple-700",
-			image: "https://avatars.mds.yandex.net/i?id=411a704aef8dd8ef0047ff8a89af97ee1ccf478b7c35f00d-10639671-images-thumbs&n=13"
-		},
-		{
-			id: 3,
-			title: "Укладки",
-			count: 32,
-			description: "Вечерние и повседневные укладки",
-			color: "from-amber-500/20 to-orange-500/20",
-			borderColor: "border-amber-200",
-			textColor: "text-amber-700",
-			image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=300&fit=crop"
-		},
-		{
-			id: 4,
-			title: "Мужские",
-			count: 15,
-			description: "Классические и современные стрижки",
-			color: "from-emerald-500/20 to-teal-500/20",
-			borderColor: "border-emerald-200",
-			textColor: "text-emerald-700",
-			image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
-		},
-		{
-			id: 5,
-			title: "Уход",
-			count: 12,
-			description: "Восстановление и лечение волос",
-			color: "from-violet-500/20 to-fuchsia-500/20",
-			borderColor: "border-violet-200",
-			textColor: "text-violet-700",
-			image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=300&fit=crop"
-		},
-		{
-			id: 6,
-			title: "Свадебные",
-			count: 8,
-			description: "Прически для особых случаев",
-			color: "from-rose-500/20 to-red-500/20",
-			borderColor: "border-rose-200",
-			textColor: "text-rose-700",
-			image: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=400&h=300&fit=crop"
-		}
-	];
+	// const serviceCategories = [
+	// 	{
+	// 		id: 1,
+	// 		title: "Стрижки",
+	// 		count: 24,
+	// 		description: "Классические и современные техники",
+	// 		color: "from-blue-500/20 to-indigo-500/20",
+	// 		borderColor: "border-blue-200",
+	// 		textColor: "text-blue-700",
+	// 		image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		title: "Окрашивание",
+	// 		count: 18,
+	// 		description: "Сложное окрашивание любой сложности",
+	// 		color: "from-purple-500/20 to-pink-500/20",
+	// 		borderColor: "border-purple-200",
+	// 		textColor: "text-purple-700",
+	// 		image: "https://avatars.mds.yandex.net/i?id=411a704aef8dd8ef0047ff8a89af97ee1ccf478b7c35f00d-10639671-images-thumbs&n=13"
+	// 	},
+	// 	{
+	// 		id: 3,
+	// 		title: "Укладки",
+	// 		count: 32,
+	// 		description: "Вечерние и повседневные укладки",
+	// 		color: "from-amber-500/20 to-orange-500/20",
+	// 		borderColor: "border-amber-200",
+	// 		textColor: "text-amber-700",
+	// 		image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&h=300&fit=crop"
+	// 	},
+	// 	{
+	// 		id: 4,
+	// 		title: "Мужские",
+	// 		count: 15,
+	// 		description: "Классические и современные стрижки",
+	// 		color: "from-emerald-500/20 to-teal-500/20",
+	// 		borderColor: "border-emerald-200",
+	// 		textColor: "text-emerald-700",
+	// 		image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+	// 	},
+	// 	{
+	// 		id: 5,
+	// 		title: "Уход",
+	// 		count: 12,
+	// 		description: "Восстановление и лечение волос",
+	// 		color: "from-violet-500/20 to-fuchsia-500/20",
+	// 		borderColor: "border-violet-200",
+	// 		textColor: "text-violet-700",
+	// 		image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=300&fit=crop"
+	// 	},
+	// 	{
+	// 		id: 6,
+	// 		title: "Свадебные",
+	// 		count: 8,
+	// 		description: "Прически для особых случаев",
+	// 		color: "from-rose-500/20 to-red-500/20",
+	// 		borderColor: "border-rose-200",
+	// 		textColor: "text-rose-700",
+	// 		image: "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=400&h=300&fit=crop"
+	// 	}
+	// ];
+
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({
 		align: 'start',

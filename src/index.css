@@ -35,6 +35,10 @@ img {
   height: auto;
   display: block;
 }
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
 
 .no-select {
   -webkit-user-select: none;

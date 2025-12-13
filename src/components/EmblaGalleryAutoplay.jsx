@@ -1,38 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { emblaGalleryAutoplayImages } from '../constants';
 
-function EmblaGalleryAutoplay() {
-	// Моковые данные для автопрокрутки
-	const autoplayImages = [
-		{
-			id: 1,
-			src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&h=900&fit=crop&crop=face",
-			alt: "Каре с челкой",
-			title: "Стрижки любой сложности",
-			subtitle: "Классические и современные техники"
-		},
-		{
-			id: 2,
-			src: "https://50.img.avito.st/image/1/1.lAEYx7aDOOh2b9jiPL2mNgFmOu6mbOLhTGw66qB6OOKMaAIir2Q.Pt8D6MNT82AdT8sF1zekgmSZhvESPxvu7SuZAEb5f_Y",
-			alt: "Балаяж",
-			title: "Сложное окрашивание",
-			subtitle: "Балаяж, омбре, шатуш"
-		},
-		{
-			id: 3,
-			src: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&h=900&fit=crop&crop=face",
-			alt: "Укладка",
-			title: "Вечерние укладки",
-			subtitle: "Для особых случаев"
-		},
-		{
-			id: 4,
-			src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&h=900&fit=crop&crop=face",
-			alt: "Мужская стрижка",
-			title: "Мужские стрижки",
-			subtitle: "Современный подход"
-		}
-	];
+function EmblaGalleryAutoplay() {	
 
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 	const autoplayRef = useRef(null);
@@ -108,7 +78,7 @@ function EmblaGalleryAutoplay() {
 			>
 				<div className="embla overflow-hidden" ref={emblaRef}>
 					<div className="embla__container flex">
-						{autoplayImages.map((image) => (
+						{emblaGalleryAutoplayImages.map((image) => (
 							<div className="embla__slide flex-[0_0_100%] min-w-0 relative" key={image.id}>
 								<div className="relative h-[60vh] max-h-[600px] min-h-[300px]">
 									<img
@@ -167,7 +137,7 @@ function EmblaGalleryAutoplay() {
 
 				{/* Индикаторы прогресса */}
 				<div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2">
-					{autoplayImages.map((_, index) => (
+					{emblaGalleryAutoplayImages.map((_, index) => (
 						<div
 							key={index}
 							className="w-8 sm:w-12 md:w-16 h-1 bg-white/30 rounded overflow-hidden"

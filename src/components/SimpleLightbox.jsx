@@ -2,42 +2,10 @@ import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { FiCamera, FiGrid, FiImage, FiMaximize2 } from 'react-icons/fi';
+import { images } from '../constants';
 
 function SimpleLightbox() {
 	const [open, setOpen] = useState(false);
-
-	const images = [
-		{
-			src: 'https://avatars.mds.yandex.net/i?id=2a0000019b0d890ff6e86ed7befb2484b3c2-1649669-fast-images&n=13',
-			alt: 'Портретная фотография с естественным светом',
-			width: 1200,
-			height: 800,
-		},
-		{
-			src: 'https://avatars.mds.yandex.net/i?id=7443eff3718eb2b7d288c6e562bfef23_sr-5219255-images-thumbs&n=13',
-			alt: 'Городской пейзаж в золотой час',
-			width: 1000,
-			height: 1500,
-		},
-		{
-			src: 'https://avatars.mds.yandex.net/i?id=13e879781f29c5345922180b1956c8054c4a756e-16304034-images-thumbs&n=13',
-			alt: 'Макросъемка деталей природы',
-			width: 1000,
-			height: 1500,
-		},
-		{
-			src: 'https://avatars.mds.yandex.net/i?id=d8c4d1784809e49d14880ac83722ef764798eb45-5409727-images-thumbs&n=13',
-			alt: 'Черно-белая архитектурная фотография',
-			width: 1000,
-			height: 1500,
-		},
-		{
-			src: 'https://avatars.mds.yandex.net/i?id=185d4177fb2ffc7bebc02182d67112ce92d3db49-9095316-images-thumbs&n=13',
-			alt: 'Вечерняя уличная фотография',
-			width: 1000,
-			height: 1500,
-		},
-	];
 
 	return (
 		<div className="w-full h-full flex flex-col items-center justify-center p-8">
