@@ -156,7 +156,7 @@ const slidesConfig = [
   //   color: "from-pink-500 to-rose-400"
   // },
   {
-    id: 3,
+    id: 2,
     name: "Embla - Категории",
     component: EmblaGalleryCategories,
     description: "Слайдер с фильтрацией",
@@ -165,7 +165,7 @@ const slidesConfig = [
     color: "from-amber-500 to-orange-400"
   },
   {
-    id: 4,
+    id: 3,
     name: "Embla - Автопрокрутка",
     component: EmblaGalleryAutoplay,
     description: "Автоматическая смена слайдов",
@@ -174,7 +174,7 @@ const slidesConfig = [
     color: "from-lime-500 to-green-400"
   },
   {
-    id: 5,
+    id: 4,
     name: "Embla - Базовый",
     component: EmblaGalleryBasic,
     description: "Простой слайдер Embla",
@@ -183,7 +183,7 @@ const slidesConfig = [
     color: "from-teal-500 to-cyan-400"
   },
   {
-    id: 6,
+    id: 5,
     name: "Splide - Базовая галерея",
     component: SplideGallery,
     description: "Простой слайдер Splide",
@@ -192,7 +192,7 @@ const slidesConfig = [
     color: "from-violet-500 to-purple-400"
   },
   {
-    id: 7,
+    id: 6,
     name: "Простой лайтбокс",
     component: SimpleLightbox,
     description: "Галерея с лайтбоксом",
@@ -210,7 +210,7 @@ const slidesConfig = [
   //   color: "from-yellow-500 to-amber-400"
   // },  
   {
-    id: 9,
+    id: 7,
     name: "Splide - Автопрокрутка",
     component: SplideGalleryAutoplay,
     description: "Промо-слайдер с автопрокруткой",

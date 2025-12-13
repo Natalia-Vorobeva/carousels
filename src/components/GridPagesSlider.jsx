@@ -23,7 +23,7 @@ function GridPagesSlider() {
 			images: [
 				{
 					id: 1,
-					src: "https://avatars.mds.yandex.net/i?id=6d502578fe1f3c3a527047c7aad80cd8de8a54af-5141058-images-thumbs&n=13",
+					src: "https://avatars.mds.yandex.net/i?id=c670bc41d12037800e35b10f2aebc7cfc2d6cb2c-9871231-images-thumbs&n=13",
 					alt: "Каре с челкой",
 					description: "Классическое каре"
 				},
