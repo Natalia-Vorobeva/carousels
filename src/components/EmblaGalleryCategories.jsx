@@ -251,9 +251,9 @@ function EmblaGalleryCategories() {
 										aria-label={`Перейти к слайду ${index + 1}`}
 									>
 										<div
-											className={`w-8 h-1.5 rounded-full transition-all duration-300 ${selectedIndex >= index && selectedIndex < index + slidesToShow
-													? 'bg-white shadow-lg shadow-white/50'
-													: 'bg-white/30 group-hover:bg-white/50'
+											className={`w-0 h-1.5 rounded-full transition-all duration-300 ${selectedIndex >= index && selectedIndex < index + slidesToShow
+												? 'bg-white shadow-lg shadow-white/50'
+												: 'bg-white/30 group-hover:bg-white/50'
 												}`}
 										/>
 									</button>
@@ -261,27 +261,37 @@ function EmblaGalleryCategories() {
 							</div>
 
 							{/* Кнопки навигации */}
-							<div className="flex space-x-4">
+							<div className="flex justify-center space-x-4 max-[450px]:space-x-2 max-[390px]:space-x-1 max-[390px]:px-[-50px]">
 								<button
 									onClick={scrollPrev}
-									className="relative w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-full flex items-center justify-center border-2 border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 group hover:scale-110 active:scale-95 overflow-hidden"
+									className="relative w-14 h-14 
+      max-[450px]:w-10 max-[450px]:h-10 
+      max-[390px]:w-8 max-[390px]:h-8 
+      flex-shrink-0"
 									aria-label="Предыдущие категории"
 								>
-									<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer"></div>
-									<svg className="w-7 h-7 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-									</svg>
+									<div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-full flex items-center justify-center border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-110 active:scale-95 overflow-hidden">
+										<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer"></div>
+										<svg className="w-7 h-7 max-[450px]:w-5 max-[450px]:h-5 max-[390px]:w-4 max-[390px]:h-4 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+										</svg>
+									</div>
 								</button>
 
 								<button
 									onClick={scrollNext}
-									className="relative w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 rounded-full flex items-center justify-center border-2 border-white/20 shadow-2xl hover:shadow-3xl transition-all duration-300 group hover:scale-110 active:scale-95 overflow-hidden"
+									className="relative w-14 h-14 
+      max-[450px]:w-10 max-[450px]:h-10 
+      max-[390px]:w-8 max-[390px]:h-8 
+      flex-shrink-0"
 									aria-label="Следующие категории"
 								>
-									<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer"></div>
-									<svg className="w-7 h-7 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-									</svg>
+									<div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-700 hover:from-purple-700 hover:to-pink-800 rounded-full flex items-center justify-center border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 group hover:scale-110 active:scale-95 overflow-hidden">
+										<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer"></div>
+										<svg className="w-7 h-7 max-[450px]:w-5 max-[450px]:h-5 max-[390px]:w-4 max-[390px]:h-4 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+										</svg>
+									</div>
 								</button>
 							</div>
 						</div>

@@ -48,7 +48,7 @@ function SplideGalleryAutoplay() {
 	];
 
 	return (
-		<div className="min-h-screen flex items-center justify-center p-4">
+		<div className="min-h-screen flex items-center justify-center pt-4 py-8">
 			<div className="w-full max-w-6xl">
 				<Splide
 					options={{
@@ -63,8 +63,8 @@ function SplideGalleryAutoplay() {
 						speed: 800,
 						easing: 'ease',
 						classes: {
-							pagination: 'splide__pagination !bottom-6',
-							page: 'splide__pagination__page !bg-white/50 !w-3 !h-3',
+							pagination: 'splide__pagination !bottom-2 sm:!bottom-4 md:!bottom-6',
+							page: 'splide__pagination__page !bg-white/50 !w-2 !h-2 sm:!w-3 sm:!h-3',
 						}
 					}}
 					aria-label="Промо-галерея услуг"
@@ -72,7 +72,7 @@ function SplideGalleryAutoplay() {
 					{autoplayImages.map((image) => (
 						<SplideSlide key={image.id}>
 							<div className={`relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r ${image.color}`}>
-								<div className="grid grid-cols-1 md:grid-cols-2 min-h-[400px]">
+								<div className="grid grid-cols-1 md:grid-cols-2 min-h-[350px] sm:min-h-[400px]">
 									{/* Левая часть - изображение */}
 									<div className="relative">
 										<img
@@ -81,44 +81,53 @@ function SplideGalleryAutoplay() {
 											className="w-full h-full object-cover"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent md:hidden" />
+
+										{/* Бейдж с номером слайда для мобильных */}
+										<div className="absolute top-2 left-2 md:hidden bg-black/70 text-white text-xs font-bold px-2 py-1 rounded-full">
+											{image.id} / {autoplayImages.length}
+										</div>
 									</div>
 
 									{/* Правая часть - текст */}
-									<div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-r from-white to-white/95">
-										<h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+									<div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-r from-white to-white/95">
+										<h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
 											{image.title}
 										</h3>
-										<p className="text-lg text-gray-600 mb-8">
+										<p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
 											{image.description}
 										</p>
-										<div className="flex flex-wrap gap-4">
-											<button className="bg-purple-600 text-white font-bold px-8 py-3 rounded-full hover:bg-purple-700 transition-colors">
+										<div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6 md:mb-8">
+											<button className="bg-purple-600 text-white font-bold text-sm sm:text-base px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full hover:bg-purple-700 transition-colors whitespace-nowrap">
 												Записаться онлайн
 											</button>
-											<button className="border-2 border-gray-300 text-gray-700 font-bold px-8 py-3 rounded-full hover:border-gray-400 transition-colors">
+											<button className="border-2 border-gray-300 text-gray-700 font-bold text-sm sm:text-base px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full hover:border-gray-400 transition-colors whitespace-nowrap">
 												Смотреть работы
 											</button>
 										</div>
 
 										{/* Дополнительная информация */}
-										<div className="mt-8 pt-6 border-t border-gray-200">
-											<div className="flex items-center text-gray-500">
-												<svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-												</svg>
-												<span>Запись на удобное время</span>
-												<span className="mx-4">•</span>
-												<svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-													<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-												</svg>
-												<span>Гарантия качества</span>
+										<div className="pt-4 sm:pt-6 border-t border-gray-200">
+											<div className="flex flex-col xs:flex-row items-start xs:items-center text-gray-500 text-xs sm:text-sm">
+												<div className="flex items-center mb-1 xs:mb-0">
+													<svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+													</svg>
+													<span>Запись на удобное время</span>
+												</div>
+												<span className="hidden xs:inline mx-2 sm:mx-3 md:mx-4">•</span>
+												<div className="flex items-center">
+													<svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+													</svg>
+													<span>Гарантия качества</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								{/* Бейдж с номером слайда */}
-								<div className="absolute top-4 left-4 bg-black/70 text-white text-sm font-bold px-3 py-1 rounded-full">
+								{/* Бейдж с номером слайда для десктопа */}
+								<div className="absolute top-4 left-4 hidden md:block bg-black/70 text-white text-sm font-bold px-3 py-1 rounded-full">
 									{image.id} / {autoplayImages.length}
 								</div>
 							</div>
@@ -128,26 +137,53 @@ function SplideGalleryAutoplay() {
 
 				{/* Кастомные стили для Splide */}
 				<style>{`
-          .splide__arrow {
-            background: rgba(255, 255, 255, 0.8) !important;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 48px !important;
-            height: 48px !important;
-          }
-          .splide__arrow:hover {
-            background: white !important;
-          }
-          .splide__arrow svg {
-            fill: #333 !important;
-            width: 20px !important;
-            height: 20px !important;
-          }
-          .splide__pagination__page.is-active {
-            background: white !important;
-            transform: scale(1.2);
-          }
-        `}</style>
+					.splide__arrow {
+						background: rgba(255, 255, 255, 0.8) !important;
+						backdrop-filter: blur(10px);
+						border: 1px solid rgba(255, 255, 255, 0.2);
+						width: 36px !important;
+						height: 36px !important;
+						top: 30% !important;
+					}
+					@media (min-width: 640px) {
+						.splide__arrow {
+							width: 40px !important;
+							height: 40px !important;
+							top: 45% !important;
+						}
+					}
+					@media (min-width: 768px) {
+						.splide__arrow {
+							width: 48px !important;
+							height: 48px !important;
+							top: 50% !important;
+						}
+					}
+					.splide__arrow:hover {
+						background: white !important;
+					}
+					.splide__arrow svg {
+						fill: #333 !important;
+						width: 16px !important;
+						height: 16px !important;
+					}
+					@media (min-width: 640px) {
+						.splide__arrow svg {
+							width: 18px !important;
+							height: 18px !important;
+						}
+					}
+					@media (min-width: 768px) {
+						.splide__arrow svg {
+							width: 20px !important;
+							height: 20px !important;
+						}
+					}
+					.splide__pagination__page.is-active {
+						background: white !important;
+						transform: scale(1.2);
+					}
+				`}</style>
 			</div>
 		</div>
 	);

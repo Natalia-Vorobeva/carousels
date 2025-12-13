@@ -84,8 +84,8 @@ const BottomNavigation = ({
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-t from-black/90 to-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
-        {/* Измененная сетка */}
-        <div className="grid grid-cols-3 items-center gap-4">
+        {/* Десктопная версия (скрыта на мобильных) */}
+        <div className="hidden md:grid grid-cols-3 items-center gap-4">
           {/* Левая часть - информация о слайде */}
           <div className="text-white min-w-0">
             <div className="text-sm opacity-70">Текущий слайдер</div>
@@ -129,6 +129,51 @@ const BottomNavigation = ({
                 />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Мобильная версия (видна только на экранах меньше 700px) */}
+        <div className="md:hidden">
+          {/* Верхний ряд: информация и счетчик */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-white min-w-0 flex-1 mr-4">
+              <div className="text-xs opacity-70 truncate">Текущий слайдер</div>
+              <div className="font-bold text-sm truncate">
+                {slidesConfig[currentIndex]?.name}
+              </div>
+            </div>
+            <div className="text-white font-bold text-lg whitespace-nowrap">
+              {currentIndex + 1} / {totalSlides}
+            </div>
+          </div>
+
+          {/* Средний ряд: прогресс бар */}
+          <div className="mb-4">
+            <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500"
+                style={{ width: `${((currentIndex + 1) / totalSlides) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Нижний ряд: кнопки навигации */}
+          <div className="flex items-center justify-center space-x-6">
+            <button
+              onClick={onPrev}
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all flex-shrink-0"
+              aria-label="Предыдущий слайд"
+            >
+              ←
+            </button>
+
+            <button
+              onClick={onNext}
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all flex-shrink-0"
+              aria-label="Следующий слайд"
+            >
+              →
+            </button>
           </div>
         </div>
       </div>

@@ -142,7 +142,7 @@ function EmblaGalleryBasic() {
 	}, [emblaApi, onSelect]);
 
 	return (
-		<div className="min-h-screen flex items-center justify-center p-4">
+		<div className="min-h-screen flex items-start justify-center p-4">
 			<div
 				ref={containerRef}
 				className="w-full max-w-6xl mx-auto bg-white rounded-xl overflow-hidden flex flex-col shadow-2xl"
@@ -269,17 +269,6 @@ function EmblaGalleryBasic() {
 							</div>
 						</div>
 					</div>
-
-					{/* Кастомные стили для скрытия скроллбара */}
-					<style jsx>{`
-          .no-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
 				</div>
 			</div>
 		</div>
