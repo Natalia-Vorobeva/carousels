@@ -1,0 +1,456 @@
+/* Swiper кастомные стили */
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  transform: scale(1.2);
+  background: white !important;
+}
+
+/* Эффекты для кнопок */
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-scale:active {
+  transform: scale(0.95);
+}
+
+/* Градиентные границы */
+.gradient-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+}
+
+/* Стеклянный эффект */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-effect-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Плавные переходы для всех интерактивных элементов */
+button, .swiper-slide {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Анимация пульсации для активных элементов */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s infinite;
+}
+/* Анимация для блестящего эффекта */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Эффекты для кнопок */
+.btn-3d {
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-3d:hover {
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Эффект поднятия */
+.btn-lift {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-lift:hover {
+  transform: translateY(-3px);
+}
+
+.btn-lift:active {
+  transform: translateY(1px);
+}
+
+/* Градиентные границы для кнопок */
+.gradient-border-btn {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+}
+
+/* Плавная прокрутка */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Убираем отступы по умолчанию */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Стили для выделения текста */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: white;
+}
+
+/* Улучшаем рендеринг шрифтов */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Отключаем outline для кнопок при клике */
+button:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Улучшаем performance для анимаций */
+.will-change-transform {
+  will-change: transform;
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Оптимизация для мобильных устройств */
+@media (max-width: 768px) {
+  .fixed {
+    position: fixed;
+  }
+
+  /* Уменьшаем размеры для мобильных */
+  .text-lg {
+    font-size: 1rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  /* Адаптивные отступы */
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-8 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Swiper кастомные стили */
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  transform: scale(1.3);
+  background: white !important;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Автопрокрутка плавнее */
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Иконки с плавными переходами */
+.icon-transition {
+  transition: all 0.2s ease;
+}
+
+.icon-transition:hover {
+  transform: translateY(-1px);
+}
+
+/* Анимация для активного слайда */
+@keyframes activeSlidePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0);
+  }
+}
+
+.active-slide-pulse {
+  animation: activeSlidePulse 2s infinite;
+}
+
+/* Градиентные текстовые эффекты */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Эффект при наведении на кнопки */
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Скрытие стрелок навигации на мобильных */
+@media (max-width: 640px) {
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    padding: 0.5rem !important;
+  }
+  
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Плавное появление контента в слайдере */
+.swiper-slide {
+  animation: slideFadeIn 0.5s ease-out;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Кастомный скролл для Swiper с миниатюрами */
+.swiper-scrollbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  height: 2px !important;
+}
+
+.swiper-scrollbar-drag {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Анимация для блестящего эффекта кнопки */
+@keyframes shine {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Анимация для плавающих элементов */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Эффект плавающей иконки */
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Градиентный текст */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff, #0088ff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Эффект неоновой подсветки */
+.neon-shadow {
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.5),
+    0 0 40px rgba(0, 136, 255, 0.3),
+    0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.neon-shadow:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.7),
+    0 0 60px rgba(0, 136, 255, 0.5),
+    0 0 90px rgba(168, 85, 247, 0.2);
+}
+
+/* Анимация пульсации для фона */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Для неонового варианта */
+@keyframes glitch {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 100px 0, 0 0; }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -10px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-15px, 15px); }
+}
+
+/* Для глитч эффекта текста */
+@keyframes glitch-text {
+  0% { clip-path: inset(0 0 100% 0); }
+  5% { clip-path: inset(0 0 0 0); }
+  10% { clip-path: inset(0 0 100% 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+.animate-glitch {
+  animation: glitch-text 3s infinite;
+}
+
+/* Анимация плавающих элементов */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(240deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+}
+
+/* Анимация смещения градиента */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Анимация блеска для металлического эффекта */
+@keyframes shine {
+  0% {
+    background-position: -100% -100%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+/* Мягкая тень для неоморфизма */
+.shadow-soft {
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+/* Привет! Я - Наталья, веб-разработчик (и не робот 😉)
+
+Мне нравятся ваши работы! Предлагаю сделать вам стильный сайт-визитку для портфолио.
+
+Новогоднее предложение:
+• Сайт за 5 000
+• Адаптив под телефон
+• Можно обновлять фото
+• 2-3 дня
+
+Вы получите готовый инструмент для привлечения клиентов, а я — проект в портфолио.
+
+Telegram: @vorobjevaa
+Мои работы: https://my-portfolio-vorobeva.vercel.app
+
+С уважением, Наталья */
