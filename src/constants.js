@@ -16,6 +16,8 @@ import pomp from './assets/images/pomp.webp'
 import tekst from './assets/images/tekst.webp'
 import boks from './assets/images/boks.webp'
 
+
+
 export const images = [
 	{
 		src: dev,
