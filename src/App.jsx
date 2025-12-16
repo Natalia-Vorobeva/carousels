@@ -1,5 +1,6 @@
-import React, { useState, lazy, Suspense, useEffect, useRef } from 'react';
+import { useState, lazy, Suspense, useEffect, useRef } from 'react';
 import './global.css';
+import TitleSlide from './components/TitleSlide';
 
 // Ленивая загрузка тяжелых 
 const GridPagesSlider = lazy(() => import('./components/GridPagesSlider'));
@@ -152,6 +153,15 @@ const BottomNavigation = ({
 const slidesConfig = [
 	{
 		id: 1,
+		name: "Перезентация слайдеров",
+		component: TitleSlide,
+		description: "Горизонтальные слайды с сеткой",
+		category: "Embla",
+		difficulty: "Средний",
+		color: "from-indigo-500 to-blue-400"
+	},
+	{
+		id: 2,
 		name: "Сетка страниц",
 		component: GridPagesSlider,
 		description: "Горизонтальные слайды с сеткой",
@@ -169,7 +179,7 @@ const slidesConfig = [
 	//   color: "from-pink-500 to-rose-400"
 	// },
 	{
-		id: 2,
+		id: 3,
 		name: "Embla - Категории",
 		component: EmblaGalleryCategories,
 		description: "Слайдер с фильтрацией",
@@ -178,7 +188,7 @@ const slidesConfig = [
 		color: "from-amber-500 to-orange-400"
 	},
 	{
-		id: 3,
+		id: 4,
 		name: "Embla - Автопрокрутка",
 		component: EmblaGalleryAutoplay,
 		description: "Автоматическая смена слайдов",
@@ -187,7 +197,7 @@ const slidesConfig = [
 		color: "from-lime-500 to-green-400"
 	},
 	{
-		id: 4,
+		id: 5,
 		name: "Embla - Базовый",
 		component: EmblaGalleryBasic,
 		description: "Простой слайдер Embla",
@@ -196,7 +206,7 @@ const slidesConfig = [
 		color: "from-teal-500 to-cyan-400"
 	},
 	{
-		id: 5,
+		id: 6,
 		name: "Splide - Базовая галерея",
 		component: SplideGallery,
 		description: "Простой слайдер Splide",
@@ -205,7 +215,7 @@ const slidesConfig = [
 		color: "from-violet-500 to-purple-400"
 	},
 	{
-		id: 6,
+		id: 7,
 		name: "Простой лайтбокс",
 		component: SimpleLightbox,
 		description: "Галерея с лайтбоксом",
@@ -223,7 +233,7 @@ const slidesConfig = [
 	//   color: "from-yellow-500 to-amber-400"
 	// },  
 	{
-		id: 7,
+		id: 8,
 		name: "Splide - Автопрокрутка",
 		component: SplideGalleryAutoplay,
 		description: "Промо-слайдер с автопрокруткой",
