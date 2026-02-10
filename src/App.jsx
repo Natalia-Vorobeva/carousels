@@ -168,16 +168,7 @@ const slidesConfig = [
 		category: "Embla",
 		difficulty: "Средний",
 		color: "from-indigo-500 to-blue-400"
-	},
-	// {
-	//   id: 2,
-	//   name: "Галерея с превью",
-	//   component: ThumbnailGallery,
-	//   description: "Основной слайдер + миниатюры",
-	//   category: "Галереи",
-	//   difficulty: "Средний",
-	//   color: "from-pink-500 to-rose-400"
-	// },
+	},	
 	{
 		id: 3,
 		name: "Embla - Категории",
@@ -222,16 +213,7 @@ const slidesConfig = [
 		category: "Галереи",
 		difficulty: "Легкий",
 		color: "from-gray-400 to-gray-600"
-	},
-	// {
-	//   id: 8,
-	//   name: "Кирпичная кладка",
-	//   component: MasonryGallery,
-	//   description: "Адаптивная сетка Pinterest",
-	//   category: "Галереи",
-	//   difficulty: "Средний",
-	//   color: "from-yellow-500 to-amber-400"
-	// },  
+	},  
 	{
 		id: 8,
 		name: "Splide - Автопрокрутка",
@@ -240,8 +222,35 @@ const slidesConfig = [
 		category: "Splide",
 		difficulty: "Средний",
 		color: "from-rose-500 to-pink-400"
-	},
+	}
+];
 	// {
+	//   id: 8,
+	//   name: "Кирпичная кладка",
+	//   component: MasonryGallery,
+	//   description: "Адаптивная сетка Pinterest",
+	//   category: "Галереи",
+	//   difficulty: "Средний",
+	//   color: "from-yellow-500 to-amber-400"
+	// },
+//   id: 2,
+	//   name: "Галерея с превью",
+	//   component: ThumbnailGallery,
+	//   description: "Основной слайдер + миниатюры",
+	//   category: "Галереи",
+	//   difficulty: "Средний",
+	//   color: "from-pink-500 to-rose-400"
+	// },
+		// {
+	//   id: 11,
+	//   name: "Splide - Фильтры",
+	//   component: SplideGalleryWithFilters,
+	//   description: "Слайдер с фильтрами по категориям",
+	//   category: "Splide",
+	//   difficulty: "Средний",
+	//   color: "from-emerald-500 to-teal-400"
+	// },
+		// {
 	//   id: 10,
 	//   name: "Splide - С миниатюрами",
 	//   component: SplideGalleryWithThumbs,
@@ -259,16 +268,6 @@ const slidesConfig = [
 	//   difficulty: "Средний",
 	//   color: "from-emerald-500 to-teal-400"
 	// }
-	// {
-	//   id: 11,
-	//   name: "Splide - Фильтры",
-	//   component: SplideGalleryWithFilters,
-	//   description: "Слайдер с фильтрами по категориям",
-	//   category: "Splide",
-	//   difficulty: "Средний",
-	//   color: "from-emerald-500 to-teal-400"
-	// },
-];
 
 // Компонент для меню навигации
 const SlideMenu = ({ slides, currentSlide, setCurrentSlide, isMenuOpen, setIsMenuOpen }) => {
